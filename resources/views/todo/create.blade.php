@@ -1,19 +1,20 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ToDo List</title>
-    
-    <!-- Styles -->
-    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ secure_asset('css/todo.css') }}" rel="stylesheet">
-  </head>
-  <body>
-    <dib class="row">
-      <h1 class="pl-5 pt-2">ToDo List</h1>
-    </dib>
-    
-  </body>
-</html>
+@extends('layouts.todo')
+
+@section('title', 'ToDo作成')
+@section('content')
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h1 class="pt-2">ToDo作成</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <p class="text-center">ToDo</p>
+      </div>
+      <div class="col-md-10">
+        <input type="text" class="form-control" name="todo" value="">
+      </div>
+    </div>
+  </div>
+@endsection
