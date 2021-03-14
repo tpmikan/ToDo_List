@@ -26,7 +26,7 @@
                 <td>{{ $list->todo }}</td>
                 <td>
                   <div>
-                    <a>削除</a>
+                    <a href="{{ action('TodoController@delete', ['id' => $list->id]) }}">削除</a>
                   </div>
                 </td>
               </tr>

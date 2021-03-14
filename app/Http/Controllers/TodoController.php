@@ -33,6 +33,13 @@ class TodoController extends Controller
       $todo->fill($form);
       $todo->save();
       
+      return redirect('/');
+    }
+    
+    public function delete (Request $request)
+    {
+      $todo = Todo::find($request->id);
+      $todo->delete();
       
       return redirect('/');
     }
