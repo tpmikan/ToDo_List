@@ -4,11 +4,16 @@
 @section('content')
   <div class="container">
     <div class="row">
-      <h1 class="pt-2">ToDo List</h1>
+      <div class="mx-auto pt-5">
+        <h1 class="pt-2">ToDo List</h1>
+      </div>
     </div>
     <div class="row">
-      <a href="{{ action('TodoController@create') }}" role="button" class="btn btn-primary">ToDo作成</a>
+      <div class="mx-auto">
+        <a href="{{ action('TodoController@create') }}" role="button" class="btn btn-primary">ToDo作成</a>
+      </div>
     </div>
+    
   </div>
   
 @endsection  
