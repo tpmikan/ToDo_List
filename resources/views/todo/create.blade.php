@@ -16,13 +16,21 @@
           <div class="col-md-2">
             <p class="text-center">ToDo</p>
           </div>
-          <div class="col-md-8">
-            <input type="text" class="form-control" name="todo" maxlength="30" value="{{ old('todo') }}">
+          <div class="col-md-10">
+            <div class="text-center">
+              <div class="input-group input-group-lg">
+                <input type="text" class="form-control" name="todo" maxlength="30" value="{{ old('todo') }}">
+              </div>
+            </div>
           </div>
         </div>
       </div>
       {{ csrf_field() }}
-      <input type="submit" class="btn btn-primary" value="作成">
+      <div class="col-md-8 mx-auto pt2">
+        <div class="text-right">
+          <input type="submit" class="btn btn-primary" value="作成">
+        </div>
+      </div>
     </form>
     
   </div>
