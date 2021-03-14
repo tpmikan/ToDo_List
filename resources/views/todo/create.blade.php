@@ -10,16 +10,20 @@
       </div>
     </div>
     
-    <div class="col-md-8 mx-auto pt-4">
-      <div class="row">
-        <div class="col-md-2">
-          <p class="text-center">ToDo</p>
-        </div>
-        <div class="col-md-10">
-          <input type="text" class="form-control" name="todo" value="">
+    <form action="{{ action('TodoController@create') }}" method="post">
+      <div class="col-md-8 mx-auto pt-4">
+        <div class="row">
+          <div class="col-md-2">
+            <p class="text-center">ToDo</p>
+          </div>
+          <div class="col-md-10">
+            <input type="text" class="form-control" name="todo" value="{{ old('todo') }}">
+          </div>
         </div>
       </div>
-    </div>
+      {{ csrf_field() }}
+      <input type="submit" class="btn btn-primary" value="作成">
+    </form>
     
   </div>
 @endsection

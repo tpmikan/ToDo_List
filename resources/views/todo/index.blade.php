@@ -10,7 +10,7 @@
     </div>
     <div class="row">
       <div class="mx-auto">
-        <a href="{{ action('TodoController@create') }}" role="button" class="btn btn-primary">ToDo作成</a>
+        <a href="{{ action('TodoController@add') }}" role="button" class="btn btn-primary">ToDo作成</a>
       </div>
     </div>
     

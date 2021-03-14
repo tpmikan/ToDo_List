@@ -16,4 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('/', 'TodoController@index');
-Route::get('create', 'TodoController@create');
+Route::get('create', 'TodoController@add');
+Route::post('create', 'TodoController@create');
