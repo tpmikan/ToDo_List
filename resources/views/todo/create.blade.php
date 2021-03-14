@@ -16,8 +16,8 @@
           <div class="col-md-2">
             <p class="text-center">ToDo</p>
           </div>
-          <div class="col-md-10">
-            <input type="text" class="form-control" name="todo" value="{{ old('todo') }}">
+          <div class="col-md-8">
+            <input type="text" class="form-control" name="todo" maxlength="30" value="{{ old('todo') }}">
           </div>
         </div>
       </div>
