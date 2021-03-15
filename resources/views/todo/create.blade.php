@@ -11,6 +11,16 @@
     </div>
     
     <form action="{{ action('TodoController@create') }}" method="post">
+     <div class="col-md-8 mx-auto pt-3">
+        @if (count($errors) > 0)
+          <ul class="list-unstyled">
+            @foreach ($errors->all() as $e)
+              <li class="text-center">～ {{ $e }} ～</li>
+            @endforeach
+          </ul>
+        @endif
+     </div>
+      
       <div class="col-md-8 mx-auto pt-4">
         <div class="row">
           <div class="col-md-2">
@@ -19,7 +29,7 @@
           <div class="col-md-10">
             <div class="text-center">
               <div class="input-group input-group-lg">
-                <input type="text" class="form-control" name="todo" maxlength="30" value="{{ old('todo') }}">
+                <input type="text" class="form-control" name="todo" maxlength="30" value="" autocomplete="off">
               </div>
             </div>
           </div>
