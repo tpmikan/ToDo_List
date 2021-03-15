@@ -17,13 +17,19 @@
       <div class="row">
         <table class="table table-light table-striped">
           <thead>
-            <th class="text-left" width="80%">～ ToDo ～</th>
-            <th width="20%">Done</th>
+            <th class="text-left" width="70%">～ ToDo ～</th>
+            <th width="15%">Edit</th>
+            <th width="15%">Done</th>
           </thead>
           <tbody>  
             @foreach ($lists as $list)
               <tr>
                 <td>・ {{ $list->todo }}</td>
+                <td>
+                  <div>
+                    <a href="{{ action('TodoController@edit', ['id' => $list->id]) }}">編集</a>
+                  </div>
+                </td>
                 <td>
                   <div>
                     <a href="{{ action('TodoController@delete', ['id' => $list->id]) }}">削除</a>

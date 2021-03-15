@@ -30,11 +30,32 @@ class TodoController extends Controller
       
       unset($form['_token']);
       
-      $todo->fill($form);
-      $todo->save();
+      $todo->fill($form)->save();
       
       return redirect('/');
     }
+    
+    public function edit (Request $request) 
+    {
+    $todo = Todo::find($request->id);
+    if (empty($todo)) {
+      abort(404);
+    }
+    return view('todo.edit', ['todo' => $todo]);
+    }
+    
+    public function update (Request $request)
+  {
+    $this->validate($request, Todo::$rules);
+    $todo = Todo::find($request->id);
+    $form = $request->all();
+    
+    unset($form['_token']);
+    
+    $todo->fill($form)->save();
+    
+    return redirect('/');
+  }
     
     public function delete (Request $request)
     {
