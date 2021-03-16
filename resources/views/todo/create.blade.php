@@ -11,7 +11,7 @@
     </div>
     
     <form action="{{ action('TodoController@create') }}" method="post">
-     <div class="col-md-8 mx-auto pt-3">
+      <div class="col-md-8 mx-auto pt-3">
         @if (count($errors) > 0)
           <ul class="list-unstyled">
             @foreach ($errors->all() as $e)
@@ -19,7 +19,7 @@
             @endforeach
           </ul>
         @endif
-     </div>
+      </div>
       
       <div class="col-md-8 mx-auto pt-4">
         <div class="row">

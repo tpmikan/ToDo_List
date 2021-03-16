@@ -13,6 +13,7 @@
         <a href="{{ action('TodoController@add') }}" role="button" class="btn btn-primary">ToDo作成</a>
       </div>
     </div>
+    
     <div class="col-md-8 mx-auto pt-4">
       <div class="row">
         <table class="table table-light table-striped">
@@ -32,7 +33,7 @@
                 </td>
                 <td>
                   <div>
-                    <a href="{{ action('TodoController@delete', ['id' => $list->id]) }}">削除</a>
+                    <a href="{{ action('TodoController@done', ['id' => $list->id]) }}">完了</a>
                   </div>
                 </td>
               </tr>
@@ -41,6 +42,37 @@
         </table>
       </div>
     </div>
+    
+    <div class="col-md-8 mx-auto pt-4">
+      <div class="row">
+        <table class="table table-secondary table-striped">
+          <thead>
+            <th class="text-left" width="70%">～ Done ToDo ～</th>
+            <th width="30%">Delete</th>
+          </thead>
+          <tbody>  
+            @foreach ($done_lists as $list)
+              <tr>
+                <td>・ <del>{{ $list->todo }}</del></td>
+                <td>
+                  <div>
+                    <a href="{{ action('TodoController@delete', ['id' => $list->id]) }}">削除</a>
+                  </div>
+                </td>
+              </tr>
+            @endforeach
+            <tr>
+              <td colspan="2" class="text-center">
+                <a href="{{ action('TodoController@allDelete') }}">すべて削除</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="text-right">
+      </div>
+    </div>
+    
   </div>
   
 @endsection  
